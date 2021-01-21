@@ -8,14 +8,14 @@ cc_library(
     hdrs = select(
         {
             "@bazel_tools//tools/python:PY2": glob(["python2.7/*.h"]),
-            "@bazel_tools//tools/python:PY3": glob(["python3.6m/**/*.h"]),
+            "@bazel_tools//tools/python:PY3": glob(["3.8/Headers/**/*.h"]),
         },
         no_match_error = "Internal error, Python version should be one of PY2 or PY3",
     ),
     includes = select(
         {
             "@bazel_tools//tools/python:PY2": ["python2.7"],
-            "@bazel_tools//tools/python:PY3": ["python3.6m"],
+            "@bazel_tools//tools/python:PY3": ["3.8/Headers"],
         },
         no_match_error = "Internal error, Python version should be one of PY2 or PY3",
     ),
