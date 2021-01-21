@@ -29,7 +29,8 @@ cc_library(
         "//conditions:default": [],
     }),
     deps = select({
-        "//conditions:default": ["@luajit_archive//:luajit"],
+        "//conditions:default": ["@lua5_2_archive//:lua5_2"],
+        ":luajit": ["@luajit_archive//:luajit"],
         ":lua5.1": ["@lua5_1_archive//:lua5_1"],
         ":lua5.2": ["@lua5_2_archive//:lua5_2"],
     }),
